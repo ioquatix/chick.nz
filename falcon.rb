@@ -1,3 +1,7 @@
+#!/usr/bin/env -S falcon host
+# frozen_string_literal: true
+
+# Copyright, 2025, by Samuel Williams.
 
 require "falcon/environment/self_signed_tls"
 require "falcon/environment/rack"

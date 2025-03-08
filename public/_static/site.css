@@ -1,8 +1,52 @@
 html {
 	font-family: "PT Sans", Verdana, Helvetica, Arial, sans-serif;
 	font-size: 16px;
-	/* A light, eggy yellow background for a warm feel */
-	background-color: #fff8e1;
+	
+	/* Base typography and backgrounds */
+	--main-color: #5d4037; /* warm brown text (p, ul, ol) */
+	--main-background-color: #fff8e1; /* light eggy yellow background */
+	
+	/* Headings and accents */
+	--heading-color: #d84315; /* bold red/orange for headings */
+	--link-color: #bf360c; /* chicken-red for links */
+	--link-hover-color: #e64a19;
+	
+	/* Header styling */
+	--header-background-color: #fff;
+	--header-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+	
+	/* Front page H1 */
+	--front-h1-color: #F89432; /* warm sunrise orange */
+	
+	--overlay-color: #fff;        /* light elements background */
+	--underlay-color: #ddd;        /* borders, shadows, etc. */
+}
+
+@media (prefers-color-scheme: dark) {
+	html {
+		/* Dark mode background and text */
+		--main-background-color: #222;  /* dark background */
+		--main-color: #ddd;             /* light text */
+		
+		/* Adjust headings and links for contrast */
+		--heading-color: #ff8a65;       /* lighter, warm coral */
+		--link-color: #ffab91;
+		--link-hover-color: #ff7043;
+		
+		/* Header styling */
+		--header-background-color: #333;
+		--header-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+		
+		/* Front page H1 */
+		--front-h1-color: #ffa726;
+		
+		/* For dark mode, use darker overlays and lighter underlays */
+		--overlay-color: #333;
+		--underlay-color: #444;
+		
+		/* Ensure the document background is dark */
+		background-color: var(--main-background-color);
+	}
 }
 
 pre {
@@ -32,13 +76,12 @@ pre {
 body {
 	padding: 0;
 	margin: 0;
-	/* Use the html background color */
-	background-color: #fff8e1;
+	background-color: var(--main-background-color);
 }
 
 body > header {
 	margin: 1rem 0;
-	background-color: #fff;
+	background-color: var(--header-background-color);
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 	padding: 0.2rem;
 }
@@ -50,18 +93,13 @@ body > header img {
 }
 
 p, ul, ol {
-	/* A warm brown tone for text, like rustic wood */
-	color: #5d4037;
-}
-
-p strong {
-	color: #222;
+	color: var(--main-color);
 }
 
 /* Update headings to a bold red/orange reminiscent of a chicken's comb */
 h1, h2, h3, h4, h5, h6 {
 	margin: 2rem 1rem 1rem 1rem;
-	color: #d84315;
+	color: var(--heading-color);
 }
 
 h1 {
@@ -78,11 +116,11 @@ img {
 
 /* Update links to a complementary chicken-red */
 a {
-	color: #bf360c;
+	color: var(--link-color);
 }
 
 a:hover {
-	color: #e64a19;
+	color: var(--link-hover-color);
 }
 
 p, ul, ol, dl, h3 {
@@ -101,9 +139,6 @@ pre {
 	overflow: auto;
 	padding: 1rem 2rem;
 	font-size: 0.8rem;
-	border-top: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
-	background-color: #eee;
 }
 
 h3 {
@@ -122,7 +157,7 @@ h2, h3, h4, h5, h6 {
 body.front h1 {
 	font-weight: normal;
 	font-size: 300%;
-	color: #F89432;  /* This warm orange can evoke a sunrise on the farm */
+	color: var(--front-h1-color);
 	text-align: center;
 }
 
@@ -134,57 +169,15 @@ footer {
 	padding: 0.2rem;
 }
 
+footer span {
+	vertical-align: top;
+}
+
 nav {
 	position: absolute;
 	margin: 2.5rem;
 	font-size: 0.8rem;
 	color: #aaa;
-}
-
-/* For feature sections, use a light, egg-shell background and rounded corners */
-section.features {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	margin: 1rem;
-}
-
-section.features > div {
-	box-sizing: border-box;
-	flex-basis: 20rem;
-	flex-grow: 1;
-	/* A subtle egg-like background */
-	background-color: #fff3e0;
-	border: 1px solid #ffe0b2;
-	border-radius: 8px;
-	color: #171e42;
-	margin: 1rem;
-	padding: 1rem;
-	padding-left: 3rem;
-	position: relative;
-}
-
-/* Update feature icons to a chicken-friendly orange */
-section.features > div i {
-	position: absolute;
-	left: 0rem;
-	font-size: 1.5rem;
-	text-align: center;
-	width: 3rem;
-	color: #f57c00;
-	text-shadow: 0px 0px 1px #000;
-}
-
-section.features p {
-	margin: 0;
-	margin-bottom: 1rem;
-	font-size: 80%;
-}
-
-section.features h2 {
-	margin: 0;
-	font-size: 1.1rem;
-	padding: 0;
 }
 
 form fieldset {
@@ -219,8 +212,8 @@ ul.cameras li {
 /* Style the link to fill the entire li */
 ul.cameras li a {
 	display: block;
-	background-color: #fff;
-	border: 1px solid #ddd;
+	background-color: var(--overlay-color);
+	border: 1px solid var(--underlay-color);
 	border-radius: 0.5rem;
 	padding: 0.5rem;
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -231,5 +224,5 @@ ul.cameras li a {
 /* Hover effect for the link */
 ul.cameras li a:hover {
 	transform: translateY(-3px);
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 4px 8px var(--underlay-color);
 }

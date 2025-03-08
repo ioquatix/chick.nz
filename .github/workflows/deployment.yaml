@@ -27,6 +27,8 @@ jobs:
     
     steps:
     - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
     - name: Push to remote system
       env:
         DEPLOY_KEY: ${{secrets.deploy_key}}

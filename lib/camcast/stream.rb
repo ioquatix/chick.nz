@@ -17,7 +17,16 @@ module Camcast
 				"-loglevel", "error",
 				"-hide_banner",
 				"-i", @url,
-				"-c", "copy",
+				
+				# Transcode to H.264:
+				"-c:v", "libx264",
+				"-preset", "veryfast",
+				"-crf", "23",
+				
+				# Disable audio:
+				"-an",
+				
+				# Segment the stream:
 				"-f", "hls",
 				"-hls_time", "10",
 				"-hls_list_size", "6",

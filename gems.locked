@@ -177,7 +177,7 @@ GEM
     thread-local (1.1.0)
     timeout (0.4.3)
     traces (0.15.2)
-    utopia (2.28.0)
+    utopia (2.29.0)
       bake (~> 0.20)
       concurrent-ruby (~> 1.2)
       console (~> 1.24)
@@ -220,7 +220,7 @@ DEPENDENCIES
   rack-test
   sus
   sus-fixtures-async-http
-  utopia (~> 2.28.0)
+  utopia (~> 2.29.0)
   variant
 
 BUNDLED WITH

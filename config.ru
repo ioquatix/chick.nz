@@ -15,7 +15,15 @@ else
 end
 
 # Serve static files from "public" directory:
-use Utopia::Static, root: "public", cache_control: "public, max-age=5"
+cache_control = proc do |file|
+	if file.path.last.end_with?(".m3u8")
+		"public, max-age=0"
+	else
+		Utopia::Static::DEFAULT_CACHE_CONTROL
+	end
+end
+
+use Utopia::Static, root: "public", cache_control: cache_control
 
 use Utopia::Redirection::Rewrite, {
 	"/" => "/index"

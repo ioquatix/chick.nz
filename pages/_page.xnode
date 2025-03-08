@@ -23,8 +23,12 @@
 			<img src="/_static/logo.webp" />
 		</header>
 
-		<div id="page">
+		<main id="page">
 			<utopia:content/>
-		</div>
+		</main>
+		
+		<footer>
+			<a href="https://github.com/ioquatix/chick.nz">Source Code</a> | Built using <a href="https://github.com/socketry/utopia">Utopia</a> and <a href="https://github.com/socketry/falcon">Falcon</a>
+		</footer>
 	</body>
 </html>

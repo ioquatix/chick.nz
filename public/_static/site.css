@@ -127,10 +127,11 @@ body.front h1 {
 }
 
 footer {
-	text-align: right;
-	margin: 2rem;
+	text-align: center;
+	margin: 1rem 0;
 	font-size: 0.65rem;
 	color: #aaa;
+	padding: 0.2rem;
 }
 
 nav {
@@ -210,28 +211,25 @@ ul.cameras {
 	justify-content: center;
 }
 
-/* Style each list item with a card-like look */
+/* Style each list item as a container */
 ul.cameras li {
+	margin: 0.5rem;
+}
+
+/* Style the link to fill the entire li */
+ul.cameras li a {
+	display: block;
 	background-color: #fff;
 	border: 1px solid #ddd;
-	border-radius: 8px;
-	margin: 10px;
-	padding: 15px 20px;
+	border-radius: 0.5rem;
+	padding: 0.5rem;
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	text-decoration: none;
+	text-align: center;
 }
 
-/* Hover effect for list items */
-ul.cameras li:hover {
+/* Hover effect for the link */
+ul.cameras li a:hover {
 	transform: translateY(-3px);
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* Style the links */
-ul.cameras li a {
-	text-decoration: none;
-	color: #333;
-	font-size: 16px;
-	font-weight: bold;
-	display: block;
-	text-align: center;
 }

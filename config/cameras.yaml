@@ -1,6 +1,6 @@
-camera0:
+main-chicken-area:
   name: Main Chicken Area
   url: rtsp://stream:stream@192.168.1.32
-camera1:
+street-view:
   name: Street View
   url: rtsp://stream:stream@192.168.1.34

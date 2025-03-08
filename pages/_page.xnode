@@ -4,9 +4,9 @@
 		<?r response.cache! ?>
 		
 		<?r if title = self[:title] ?>
-			<title>#{title.gsub(/<.*?>/, "")} - Utopia</title>
+			<title>#{title.gsub(/<.*?>/, "")} - Chick.nz</title>
 		<?r else ?>
-			<title>Utopia</title>
+			<title>Chick.nz</title>
 		<?r end ?>
 		
 		<base href="#{first.node.uri_path}"/>

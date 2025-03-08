@@ -16,6 +16,8 @@
 		
 		<link rel="icon" type="image/png" href="/_static/icon.webp" />
 		<link rel="stylesheet" href="/_static/site.css" type="text/css" media="screen" />
+		
+		<script async defer src="https://buttons.github.io/buttons.js"></script>
 	</head>
 
 	<body class="#{attributes[:class]}">
@@ -28,7 +30,10 @@
 		</main>
 		
 		<footer>
-			<a href="https://github.com/ioquatix/chick.nz">Source Code</a> | Built using <a href="https://github.com/socketry/utopia">Utopia</a> and <a href="https://github.com/socketry/falcon">Falcon</a>
+			<a class="github-button" href="https://github.com/ioquatix/chick.nz" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-show-count="true" aria-label="Star ioquatix/chick.nz on GitHub">Star</a>
+			
+			| <a href="https://github.com/ioquatix/chick.nz">Source Code</a> 
+			| Built using <a href="https://github.com/socketry/utopia">Utopia</a> and <a href="https://github.com/socketry/falcon">Falcon</a>
 		</footer>
 	</body>
 </html>

@@ -18,7 +18,7 @@ end
 use Utopia::Static, root: "public"
 
 use Utopia::Redirection::Rewrite, {
-	"/" => "/welcome/index"
+	"/" => "/index"
 }
 
 use Utopia::Redirection::DirectoryIndex
@@ -40,8 +40,8 @@ use Utopia::Redirection::Errors, {
 
 use Utopia::Controller
 
-# Serve static files from "pages" directory:
-use Utopia::Static
+# # Serve static files from "pages" directory:
+# use Utopia::Static
 
 # Serve dynamic content:
 use Utopia::Content

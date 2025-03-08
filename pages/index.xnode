@@ -1,4 +1,10 @@
 <content:page class="front">
+	<ul class="cameras">
+	<?r attributes[:cameras].each do |camera| ?>
+		<li><a href="#{camera.id}">#{camera.name}</a></li>
+	<?r end ?>
+	</ul>
+	
 	<video id="video" width="100%" height="100%" controls autoplay muted></video>
 	<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 	<script>
@@ -8,13 +14,13 @@
 			hls.on(Hls.Events.ERROR, function(event, data) {
 				console.error('HLS.js error:', data);
 			});
-			hls.loadSource('camera01/stream.m3u8');
+			hls.loadSource(#{Script.json attributes[:camera].stream_url});
 			hls.attachMedia(video);
 			hls.on(Hls.Events.MANIFEST_PARSED, function() {
 				video.play();
 			});
 		} else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-			video.src = 'camera01/stream.m3u8';
+			video.src = #{Script.json attributes[:camera].stream_url};
 			video.addEventListener('loadedmetadata', function() {
 				video.play();
 			});

@@ -2,35 +2,36 @@ module Camcast
 	class Stream
 		def initialize(url, output_path)
 			@url = url
+			@output_path = output_path
 		end
-		
-		FFMPEG = "ffmpeg"
 		
 		def stream_path
-			File.join(output_path, "stream.m3u8")
+			File.join(@output_path, "stream.m3u8")
 		end
 		
+		FFMPEG = ENV.fetch("FFMPEG", "ffmpeg")
+		
 		def start
-			Process.spawn([
+			Process.spawn(
 				FFMPEG,
+				"-loglevel", "error",
+				"-hide_banner",
 				"-i", @url,
-				"-c:v", "libx264",
-				"-preset", "veryfast",
-				"-crf", "23",
-				"-c:a", "aac",
-				"-b:a", "128k",
+				"-c", "copy",
 				"-f", "hls",
-				"-hls_time", "4",
-				"-hls_list_size", "10",
+				"-hls_time", "10",
+				"-hls_list_size", "6",
 				"-hls_flags", "delete_segments",
 				stream_path
-			])
+			)
 		end
 		
 		def run
 			pid = self.start
 			
 			Process.wait(pid)
+			
+			pid = nil # Process has exited... don't try to kill it.
 		ensure
 			if pid
 				Process.kill("TERM", pid)

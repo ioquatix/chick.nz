@@ -1,7 +1,8 @@
-
 html {
 	font-family: "PT Sans", Verdana, Helvetica, Arial, sans-serif;
 	font-size: 16px;
+	/* A light, eggy yellow background for a warm feel */
+	background-color: #fff8e1;
 }
 
 pre {
@@ -31,37 +32,36 @@ pre {
 body {
 	padding: 0;
 	margin: 0;
-	
-	background-color: #fafafa;
+	/* Use the html background color */
+	background-color: #fff8e1;
 }
 
 body > header {
-	margin: 1rem 0 1rem 0;
-	
-	background-color: white;
-	
-	background-image: url(utopia-background.svg);
-	
+	margin: 1rem 0;
+	background-color: #fff;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+	padding: 0.2rem;
 }
 
 body > header img {
 	display: block;
 	margin: auto;
-	height: 4rem;
+	height: 6rem;
 }
 
 p, ul, ol {
-	color: #555;
+	/* A warm brown tone for text, like rustic wood */
+	color: #5d4037;
 }
 
 p strong {
 	color: #222;
 }
 
+/* Update headings to a bold red/orange reminiscent of a chicken's comb */
 h1, h2, h3, h4, h5, h6 {
 	margin: 2rem 1rem 1rem 1rem;
-	color: #4E8DD9;
+	color: #d84315;
 }
 
 h1 {
@@ -76,12 +76,13 @@ img {
 	border: none;
 }
 
+/* Update links to a complementary chicken-red */
 a {
-	color: #33a;
+	color: #bf360c;
 }
 
 a:hover {
-	color: #55c;
+	color: #e64a19;
 }
 
 p, ul, ol, dl, h3 {
@@ -98,13 +99,10 @@ li > ul, li > ol {
 
 pre {
 	overflow: auto;
-	
 	padding: 1rem 2rem;
 	font-size: 0.8rem;
-	
 	border-top: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
-	
 	background-color: #eee;
 }
 
@@ -120,11 +118,11 @@ h2, h3, h4, h5, h6 {
 	font-weight: normal;
 }
 
+/* Front page h1 updated to use a bright, chicken-inspired color */
 body.front h1 {
 	font-weight: normal;
 	font-size: 300%;
-	color: #F89432;
-
+	color: #F89432;  /* This warm orange can evoke a sunrise on the farm */
 	text-align: center;
 }
 
@@ -142,44 +140,43 @@ nav {
 	color: #aaa;
 }
 
+/* For feature sections, use a light, egg-shell background and rounded corners */
 section.features {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	
 	margin: 1rem;
 }
 
 section.features > div {
 	box-sizing: border-box;
-	
 	flex-basis: 20rem;
 	flex-grow: 1;
-	
+	/* A subtle egg-like background */
+	background-color: #fff3e0;
+	border: 1px solid #ffe0b2;
+	border-radius: 8px;
 	color: #171e42;
 	margin: 1rem;
 	padding: 1rem;
-	
 	padding-left: 3rem;
-	
 	position: relative;
 }
 
+/* Update feature icons to a chicken-friendly orange */
 section.features > div i {
 	position: absolute;
 	left: 0rem;
-	
 	font-size: 1.5rem;
 	text-align: center;
-	
 	width: 3rem;
-	color: #fafafa;
+	color: #f57c00;
 	text-shadow: 0px 0px 1px #000;
 }
 
 section.features p {
 	margin: 0;
-	maring-bottom: 1rem;
+	margin-bottom: 1rem;
 	font-size: 80%;
 }
 
@@ -195,11 +192,46 @@ form fieldset {
 
 form fieldset textarea {
 	box-sizing: border-box;
-	
 	width: 100%;
 	height: 10rem;
 }
 
 form fieldset.footer {
 	text-align: right;
+}
+
+/* Remove default list styling and center the items */
+ul.cameras {
+	list-style: none;
+	padding: 0;
+	margin: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+/* Style each list item with a card-like look */
+ul.cameras li {
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	margin: 10px;
+	padding: 15px 20px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for list items */
+ul.cameras li:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Style the links */
+ul.cameras li a {
+	text-decoration: none;
+	color: #333;
+	font-size: 16px;
+	font-weight: bold;
+	display: block;
+	text-align: center;
 }

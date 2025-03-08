@@ -8,3 +8,5 @@ Bundler.setup
 
 require "utopia/setup"
 UTOPIA ||= Utopia.setup
+
+require "camcast"

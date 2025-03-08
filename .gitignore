@@ -15,5 +15,3 @@
 
 /public/**/*.m3u8
 /public/**/*.ts
-
-/config/cameras.yaml

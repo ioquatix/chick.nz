@@ -1,0 +1,38 @@
+name: Deployment
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    
+    - name: Install dependencies...
+      run: |
+        sudo apt-get install libvips
+    
+    - uses: ruby/setup-ruby@v1
+      with:
+        bundler-cache: true
+    
+    - name: Run tests...
+      run: bundle exec bake test
+  
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Push to remote system
+      env:
+        DEPLOY_KEY: ${{secrets.deploy_key}}
+      run: |
+        eval "$(ssh-agent -s)"
+        ssh-add - <<< $DEPLOY_KEY
+        mkdir ~/.ssh
+        ssh-keyscan -H hana.oriontransfer.co.nz >> ~/.ssh/known_hosts
+        git push -f ssh://http@hana.oriontransfer.co.nz/srv/http/chick.nz/ HEAD:main

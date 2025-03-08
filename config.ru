@@ -15,7 +15,7 @@ else
 end
 
 # Serve static files from "public" directory:
-use Utopia::Static, root: "public"
+use Utopia::Static, root: "public", cache_control: "public, max-age=5"
 
 use Utopia::Redirection::Rewrite, {
 	"/" => "/index"

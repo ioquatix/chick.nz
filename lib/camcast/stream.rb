@@ -23,8 +23,8 @@ module Camcast
 				"-preset", "veryfast",
 				"-crf", "23",
 				
-				# Disable audio:
-				"-an",
+				# Transcode audio to AAC:
+				"-c:a", "aac", "-b:a", "128k",
 				
 				# Segment the stream:
 				"-f", "hls",

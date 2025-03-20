@@ -14,7 +14,7 @@ module Camcast
 		def start
 			Process.spawn(
 				FFMPEG,
-				"-loglevel", "error",
+				# "-loglevel", "error",
 				"-hide_banner",
 				"-i", @url,
 				

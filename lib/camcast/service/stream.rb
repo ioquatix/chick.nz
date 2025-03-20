@@ -8,7 +8,7 @@ module Camcast
 				cameras = @evaluator.cameras
 				
 				cameras.each do |camera|
-					container.spawn(restart: true) do |instance|
+					container.spawn(restart: true, name: "Camera Stream: #{camera.id}") do |instance|
 						instance.ready!
 						
 						root = File.join(@evaluator.public_path, camera.id.to_s)

@@ -14,10 +14,21 @@ end
 
 hostname = File.basename(__dir__)
 
+# service hostname do
+# 	include Falcon::Environment::Rack
+# 	include Falcon::Environment::TLS
+# 	include Falcon::Environment::LetsEncryptTLS
+# end
+
 service hostname do
 	include Falcon::Environment::Rack
-	include Falcon::Environment::TLS
-	include Falcon::Environment::LetsEncryptTLS
+	
+	scheme "http"
+	protocol {Async::HTTP::Protocol::HTTP}
+	
+	endpoint do
+		Async::HTTP::Endpoint.for(scheme, "localhost", port: 9292, protocol: protocol)
+	end
 end
 
 require_relative "lib/camcast/service/environment"

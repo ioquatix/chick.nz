@@ -54,4 +54,4 @@ use Utopia::Controller
 # Serve dynamic content:
 use Utopia::Content
 
-run lambda { |env| [404, {}, []] }
+run ->(env) {[404, {}, []]}

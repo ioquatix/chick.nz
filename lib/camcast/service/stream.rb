@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "async/service/generic"
 require "fileutils"
 

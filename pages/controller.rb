@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 prepend Actions
 
 on "*" do |request, path|

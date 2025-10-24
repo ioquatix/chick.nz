@@ -18,7 +18,10 @@ gem "net-smtp"
 group :development do
 	gem "bake-test"
 	gem "rack-test"
-	gem "guard-falcon", require: false
+	
+	gem "rubocop"
+	gem "rubocop-md"
+	gem "rubocop-socketry"
 	
 	gem "sus"
 	gem "sus-fixtures-async-http"

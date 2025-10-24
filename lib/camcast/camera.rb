@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative "stream"
 
 module Camcast
@@ -22,8 +24,8 @@ module Camcast
 		
 		attr :options
 		
-		def stream(...)
-			Stream.new(@url, ...)
+		def stream(output_path)
+			Stream.new(@url, output_path, **@options)
 		end
 		
 		def stream_url

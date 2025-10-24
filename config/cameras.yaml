@@ -1,9 +1,10 @@
-main-chicken-area:
-  name: Main Chicken Area
+chicken-area:
+  name: Chicken Area
   url: rtsp://stream:stream@192.168.1.32
 street-view:
   name: Street View
   url: rtsp://stream:stream@192.168.1.34
-tree-view:
-  name: Tree View
+cat-feeder:
+  name: Cat Feeder
   url: rtsp://stream:stream@192.168.1.56/stream1
+  audio: false

@@ -1,13 +1,13 @@
 chicken-area:
   name: Chicken Area
   url: rtsp://stream:stream@192.168.1.57/stream1
+  codec: copy
 chicken-house:
   name: Chicken House
   url: rtsp://stream:stream@192.168.1.58/stream1
+  codec: copy
 cat-feeder:
   name: Cat Feeder
   url: rtsp://stream:stream@192.168.1.56/stream1
   audio: false
-street-view:
-  name: Street View
-  url: rtsp://stream:stream@192.168.1.34
+  codec: copy
